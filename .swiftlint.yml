@@ -1,0 +1,28 @@
+included:
+  - Level1Kuiz
+  
+excluded:
+  - Carthage
+  - Pods
+
+opt_in_rules:
+  - closure_spacing
+  - fatal_error_message
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - legacy_multiple
+  - legacy_random
+  - operator_usage_whitespace
+  - trailing_whitespace
+
+disabled_rules:
+  - line_length  # Use Xcode page column guide
+  - multiple_closures_with_trailing_closure  # Does not go well with SwiftUI
+
+indentation: 4
+
+# Some mathmatical representation uses short length variable names like x, y, p, q
+identifier_name:
+  min_length: 1
+type_name:
+  min_length: 1
