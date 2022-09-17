@@ -15,6 +15,7 @@
 		3A16D41C28CB14EA0049729B /* Level1KuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */; };
 		3A16D41E28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */; };
 		3AD597F828CB160500284FE8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD597F728CB160500284FE8 /* .swiftlint.yml */; };
+		60DB26F228D596B7004D4ED6 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DB26F128D596B7004D4ED6 /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITests.swift; sourceTree = "<group>"; };
 		3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3AD597F728CB160500284FE8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		60DB26F128D596B7004D4ED6 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		3A16D3FF28CB14E80049729B /* Level1Kuiz */ = {
 			isa = PBXGroup;
 			children = (
+				60DB26EF28D5968C004D4ED6 /* New Group */,
 				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40228CB14E80049729B /* ContentView.swift */,
 				3A16D40428CB14EA0049729B /* Assets.xcassets */,
@@ -128,6 +131,22 @@
 				3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */,
 			);
 			path = Level1KuizUITests;
+			sourceTree = "<group>";
+		};
+		60DB26EF28D5968C004D4ED6 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				60DB26F028D596AA004D4ED6 /* Seunyong */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		60DB26F028D596AA004D4ED6 /* Seunyong */ = {
+			isa = PBXGroup;
+			children = (
+				60DB26F128D596B7004D4ED6 /* Sample.swift */,
+			);
+			path = Seunyong;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
+				60DB26F228D596B7004D4ED6 /* Sample.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
