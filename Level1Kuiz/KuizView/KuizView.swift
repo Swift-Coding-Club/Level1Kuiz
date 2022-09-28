@@ -18,21 +18,19 @@ struct KuizView: View {
 
     var body: some View {
 
-        VStack(spacing: 10) {
-
-            Text(String(currentCount) + "/" + String(sampleData.count))
+        VStack(spacing: 50) {
+            
+            Text(String(correctCount) + "/" + String(sampleData.count))
             VStack(spacing: 20) {
 
                 Text("다음 중 맞는 것을 고르세요!")
-                    .font(.headline)
-
+                
                 if let quizString = sampleData[currentCount].quizString {
                     Text(quizString)
-                        .font(.subheadline)
                 }
-
+                
                 if randomFlag == 0 {
-                    HStack(spacing: 50) {
+                    HStack {
                         Button {
                             randomFlag = Int.random(in: 0...1)
                             correctCount += 1
