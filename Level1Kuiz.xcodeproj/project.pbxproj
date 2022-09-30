@@ -15,14 +15,9 @@
 		3A16D41C28CB14EA0049729B /* Level1KuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */; };
 		3A16D41E28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */; };
 		6087BCF728E682CF0038C638 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6087BCF628E682CF0038C638 /* ResultView.swift */; };
-
 		60A594EB28E165F600E052F2 /* KuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* KuizView.swift */; };
 		60D411CD28E3DB5D00DC2492 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D411CC28E3DB5D00DC2492 /* SampleData.swift */; };
 		60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D411CE28E3DB6A00DC2492 /* DataManager.swift */; };
-
-		3AD597F828CB160500284FE8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD597F728CB160500284FE8 /* .swiftlint.yml */; };
-		59BF6F3F28E5BB75005B6879 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BF6F3E28E5BB75005B6879 /* ResultView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +49,9 @@
 		3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITests.swift; sourceTree = "<group>"; };
 		3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6087BCF628E682CF0038C638 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-
 		60A594EA28E165F600E052F2 /* KuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuizView.swift; sourceTree = "<group>"; };
 		60D411CC28E3DB5D00DC2492 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		60D411CE28E3DB6A00DC2492 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-
-		3AD597F728CB160500284FE8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		59BF6F3E28E5BB75005B6879 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,18 +102,12 @@
 		3A16D3FF28CB14E80049729B /* Level1Kuiz */ = {
 			isa = PBXGroup;
 			children = (
-				6087BCF828E682F40038C638 /* View */,
-				60D411C928E3D94F00DC2492 /* Model */,
-
-				60D411C928E3D94F00DC2492 /* Model */,
-				60A594E928E1605F00E052F2 /* KuizView */,
-
-				59BF6F3D28E5BB63005B6879 /* Hamsik */,
-
-				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40228CB14E80049729B /* ContentView.swift */,
+				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40428CB14EA0049729B /* Assets.xcassets */,
+				60D411C928E3D94F00DC2492 /* Model */,
 				3A16D40628CB14EA0049729B /* Preview Content */,
+				6087BCF828E682F40038C638 /* View */,
 			);
 			path = Level1Kuiz;
 			sourceTree = "<group>";
@@ -170,7 +154,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-
 		60A594E928E1605F00E052F2 /* KuizView */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,14 +169,6 @@
 				60D411CE28E3DB6A00DC2492 /* DataManager.swift */,
 			);
 			path = Model;
-
-		59BF6F3D28E5BB63005B6879 /* Hamsik */ = {
-			isa = PBXGroup;
-			children = (
-				59BF6F3E28E5BB75005B6879 /* ResultView.swift */,
-			);
-			path = Hamsik;
-
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,16 +324,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
-
 				60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 				60A594EB28E165F600E052F2 /* KuizView.swift in Sources */,
 				60D411CD28E3DB5D00DC2492 /* SampleData.swift in Sources */,
 				6087BCF728E682CF0038C638 /* ResultView.swift in Sources */,
-
-				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
-				59BF6F3F28E5BB75005B6879 /* ResultView.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
