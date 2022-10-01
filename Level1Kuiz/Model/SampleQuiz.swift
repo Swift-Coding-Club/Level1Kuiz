@@ -8,7 +8,7 @@
 import Foundation
 
 // 샘플 데이터
-struct SampleData: Identifiable {
+struct SampleQuiz: Identifiable {
     var id = UUID()
 
     let quizString: String?
