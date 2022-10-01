@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct KuizView: View {
+struct QuizView: View {
 
     @State private var correctCount: Int = 0
     @State private var currentCount: Int = 0
 
-    let sampleData = DataManager.share.getData()
+    let sampleQuizzes = DataManager.share.getQuizzes()
 
     @State private var randomFlag: Int = Int.random(in: 0...1)
 
@@ -20,12 +20,12 @@ struct KuizView: View {
 
         VStack(spacing: 50) {
             
-            Text(String(correctCount) + "/" + String(sampleData.count))
+            Text(String(correctCount) + "/" + String(sampleQuizzes.count))
             VStack(spacing: 20) {
 
                 Text("다음 중 맞는 것을 고르세요!")
                 
-                if let quizString = sampleData[currentCount].quizString {
+                if let quizString = sampleQuizzes[currentCount].quizString {
                     Text(quizString)
                 }
                 
@@ -36,14 +36,14 @@ struct KuizView: View {
                             correctCount += 1
                             currentCount += 1
                         } label: {
-                            Text(sampleData[currentCount].correctAnswer)
+                            Text(sampleQuizzes[currentCount].correctAnswer)
                         }
 
                         Button {
                             randomFlag = Int.random(in: 0...1)
                             currentCount += 1
                         } label: {
-                            Text(sampleData[currentCount].wrongAnswer)
+                            Text(sampleQuizzes[currentCount].wrongAnswer)
                         }
                     }
                 } else {
@@ -52,7 +52,7 @@ struct KuizView: View {
                             randomFlag = Int.random(in: 0...1)
                             currentCount += 1
                         } label: {
-                            Text(sampleData[currentCount].wrongAnswer)
+                            Text(sampleQuizzes[currentCount].wrongAnswer)
                         }
 
                         Button {
@@ -60,7 +60,7 @@ struct KuizView: View {
                             correctCount += 1
                             currentCount += 1
                         } label: {
-                            Text(sampleData[currentCount].correctAnswer)
+                            Text(sampleQuizzes[currentCount].correctAnswer)
                         }
                     }
                 }
@@ -70,8 +70,8 @@ struct KuizView: View {
     }
 }
 
-struct KuizView_Previews: PreviewProvider {
+struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        KuizView()
+        QuizView()
     }
 }
