@@ -1,0 +1,16 @@
+//
+//  QuizService.swift
+//  Level1Kuiz
+//
+//  Created by 백은주 on 2022/10/08.
+//
+
+import Foundation
+
+class QuizService {
+    func getQuizzes(completeHandler: @escaping (Result<[Quiz], Error>) -> Void) {
+        HTTPClient().request(path: "/quizzes", method: .get) { (result: Result<[Quiz], Error>) in
+            completeHandler(result)
+        }
+    }
+}
