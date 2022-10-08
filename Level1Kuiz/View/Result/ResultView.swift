@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  ResultView.swift
 //  Level1Kuiz
 //
 //  Created by 황석현 on 2022/09/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Result: View {
+struct ResultView: View {
 
     @State var name: String = ""
     var score: Int = 0
@@ -70,6 +70,6 @@ struct Result: View {
 
 struct Result_Previews: PreviewProvider {
     static var previews: some View {
-        Result()
+        ResultView()
     }
 }
