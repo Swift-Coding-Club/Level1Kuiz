@@ -12,7 +12,7 @@ class HTTPClient: ObservableObject {
     private let baseURL = "https://d0adbeb1-99b6-40b3-bf36-2bcf7c104467.mock.pstmn.io"
 
     func request<R: Decodable>(path: String, method: HTTPMethod, completeHandler: @escaping (Result<R, Error>) -> Void) {
-        guard let url = URL(string: "\(baseURL)/\(path)") else {
+        guard let url = URL(string: "\(baseURL)\(path)") else {
             fatalError(ServiceConstant.NOT_FOUND_URL)
         }
 

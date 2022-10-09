@@ -13,4 +13,10 @@ class QuizService {
             completeHandler(result)
         }
     }
+
+    func getQuizExamples(completeHandler: @escaping (Result<[[Quiz.Answer]], Error>) -> Void) {
+        HTTPClient().request(path: "/quizzes/examples", method: .get) { (result: Result<[[Quiz.Answer]], Error>) in
+            completeHandler(result)
+        }
+    }
 }
