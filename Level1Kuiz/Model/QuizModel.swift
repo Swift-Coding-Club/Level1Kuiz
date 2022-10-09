@@ -18,6 +18,21 @@ struct Quiz: Identifiable, Decodable {
     }
 }
 
+class QuizExamplesModel: ObservableObject {
+    @Published var examples: [[Quiz.Answer]] = []
+
+    init() {
+        QuizService().getQuizExamples { result in
+            switch result {
+            case .success(let data):
+                self.examples = data
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+}
+
 struct SampleQuiz: Identifiable {
     var id = UUID()
 

@@ -17,9 +17,7 @@ struct QuizView: View {
     @State private var randomFlag: Int = Int.random(in: 0...1)
 
     var body: some View {
-
         VStack(spacing: 50) {
-
             Text(String(correctCount) + "/" + String(sampleQuizzes.count))
             VStack(spacing: 20) {
 
