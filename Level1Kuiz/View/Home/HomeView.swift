@@ -50,7 +50,7 @@ struct HomeView: View {
 
                         Spacer()
 
-                        NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
+                        NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive), isActive: $isNavigationLinkActive) {
                             Button {
                                 isNavigationLinkActive = true
                             } label: {
@@ -91,6 +91,7 @@ struct HomeView: View {
                 answers = quizExamplesModel.data.randomElement()!
             }
         }
+        .preferredColorScheme(.light)
     }
 }
 

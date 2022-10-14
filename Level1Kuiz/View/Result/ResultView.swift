@@ -13,6 +13,8 @@ struct ResultView: View {
     var score: Int = 0
     var Correct: String = "0"
 
+    @Binding var isNavigationLinkActive: Bool
+
     var body: some View {
         VStack {
 
@@ -61,7 +63,7 @@ struct ResultView: View {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
             }
                 Button("홈으로") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    isNavigationLinkActive = false
                 }
             }
         }
@@ -70,6 +72,6 @@ struct ResultView: View {
 
 struct Result_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView()
+        ResultView(isNavigationLinkActive: .constant(true))
     }
 }
