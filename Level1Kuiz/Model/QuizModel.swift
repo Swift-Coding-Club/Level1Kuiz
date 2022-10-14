@@ -47,11 +47,3 @@ class QuizExamplesModel: ObservableObject {
         }
     }
 }
-
-struct SampleQuiz: Identifiable {
-    var id = UUID()
-
-    let quizString: String?
-    let correctAnswer: String
-    let wrongAnswer: String
-}
