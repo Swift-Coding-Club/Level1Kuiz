@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 class HTTPClient: ObservableObject {
-    private let baseURL = "https://d0adbeb1-99b6-40b3-bf36-2bcf7c104467.mock.pstmn.io"
+    private let baseURL = "https://634a6d5f5df952851411457d.mockapi.io/kuiz"
 
     func request<R: Decodable>(path: String, method: HTTPMethod, completeHandler: @escaping (Result<R, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)\(path)") else {
