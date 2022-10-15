@@ -13,20 +13,20 @@ class DataManager {
     static let share = DataManager()
     private init() {}
 
-    private let sampleQuizzes: [SampleQuiz] = [
-        SampleQuiz(quizString: "_ 같은 박수가 나왔다.", correctAnswer: "우레", wrongAnswer: "우뢰"),
-        SampleQuiz(quizString: "그의 무례한 행동은 저절로 _ 을 찌푸리게 했다.", correctAnswer: "눈살", wrongAnswer: "눈쌀"),
-        SampleQuiz(quizString: nil, correctAnswer: "화룡점정", wrongAnswer: "화룡정점"),
-        SampleQuiz(quizString: nil, correctAnswer: "맛 좋은", wrongAnswer: "맛좋은"),
-        SampleQuiz(quizString: "_ 발언하세요.", correctAnswer: "상대측", wrongAnswer: "상대 측"),
-        SampleQuiz(quizString: nil, correctAnswer: "예부터", wrongAnswer: "옛부터"),
-        SampleQuiz(quizString: "그녀는 눈에 초점이 없고 _ 한 상태였다.", correctAnswer: "흐리멍덩", wrongAnswer: "흐리멍텅"),
-        SampleQuiz(quizString: nil, correctAnswer: "갈가리 찢다", wrongAnswer: "갈갈이 찢다"),
-        SampleQuiz(quizString: nil, correctAnswer: "답변드렸다", wrongAnswer: "답변 드렸다"),
-        SampleQuiz(quizString: "약이 _ 를 보이다.", correctAnswer: "즉효", wrongAnswer: "직효")
+    private let sampleQuizzes: [Quiz] = [
+        Quiz(id: "0", answers: [Quiz.Answer(text: "이곳은 국립국어원입니다.", isCorrect: true), Quiz.Answer(text: "이곳은 국립국어원 입니다.", isCorrect: false)], description: "국립국어원입니다 가 맞습니다!"),
+        Quiz(id: "1", answers: [Quiz.Answer(text: "집에서만 이라도 좀 쉬세요.", isCorrect: false), Quiz.Answer(text: "집에서만이라도 좀 쉬세요.", isCorrect: true)], description: "집에서만이라도 가 맞습니다!"),
+        Quiz(id: "2", answers: [Quiz.Answer(text: "친구 같이 지내는 사이입니다.", isCorrect: false), Quiz.Answer(text: "친구같이 지내는 사이입니다.", isCorrect: true)], description: "친구같이 가 맞습니다!"),
+        Quiz(id: "3", answers: [Quiz.Answer(text: "나 조차도.", isCorrect: false), Quiz.Answer(text: "나조차도", isCorrect: true)], description: "나조차도 가 맞습니다!"),
+        Quiz(id: "4", answers: [Quiz.Answer(text: "불러 낼", isCorrect: false), Quiz.Answer(text: "불러낼", isCorrect: true)], description: "불러낼 이 맞습니다!"),
+        Quiz(id: "5", answers: [Quiz.Answer(text: "확인 할", isCorrect: false), Quiz.Answer(text: "확인할", isCorrect: true)], description: "확인할 이 맞습니다!"),
+        Quiz(id: "6", answers: [Quiz.Answer(text: "안돼", isCorrect: false), Quiz.Answer(text: "안 돼", isCorrect: true)], description: "안 돼 가 맞습니다!"),
+        Quiz(id: "7", answers: [Quiz.Answer(text: "첫번째, 두번째", isCorrect: false), Quiz.Answer(text: "첫 번째, 두 번째", isCorrect: true)], description: "첫 번째, 두 번째 가 맞습니다!"),
+        Quiz(id: "8", answers: [Quiz.Answer(text: "몇년전부터", isCorrect: false), Quiz.Answer(text: "몇 년 전부터", isCorrect: true)], description: "몇 년 전부터 가 맞습니다!"),
+        Quiz(id: "9", answers: [Quiz.Answer(text: "쓰기전에", isCorrect: false), Quiz.Answer(text: "쓰기 전에", isCorrect: true)], description: "쓰기 전에 가 맞습니다!")
     ]
 
-    func getQuizzes() -> [SampleQuiz] {
+    func getQuizzes() -> [Quiz] {
         return sampleQuizzes
     }
 

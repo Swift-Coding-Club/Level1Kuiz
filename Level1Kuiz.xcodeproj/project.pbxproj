@@ -208,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				3A295C8728E81A8F00243DBC /* Home */,
-				6087BCF528E682AC0038C638 /* Result */,
 				60A594E928E1605F00E052F2 /* Quiz */,
+				6087BCF528E682AC0038C638 /* Result */,
 			);
 			path = View;
 			sourceTree = "<group>";
