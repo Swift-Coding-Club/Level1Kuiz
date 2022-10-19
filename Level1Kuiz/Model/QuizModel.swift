@@ -18,20 +18,20 @@ struct Quiz: Identifiable, Decodable {
     }
 }
 
-class QuizModel: ObservableObject {
-    @Published var data: [Quiz] = []
-
-    init() {
-        QuizService().getQuizzes { result in
-            switch result {
-            case .success(let data):
-                self.data = data
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-}
+// class QuizModel: ObservableObject {
+//    @Published var data: [Quiz] = []
+//
+//    init() {
+//        QuizService().getQuizzes { result in
+//            switch result {
+//            case .success(let data):
+//                self.data = data
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+// }
 
 class QuizExamplesModel: ObservableObject {
     @Published var data: [[Quiz.Answer]] = []
