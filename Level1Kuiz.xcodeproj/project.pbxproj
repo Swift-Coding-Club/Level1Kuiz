@@ -14,8 +14,17 @@
 		3A16D41228CB14EA0049729B /* Level1KuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41128CB14EA0049729B /* Level1KuizTests.swift */; };
 		3A16D41C28CB14EA0049729B /* Level1KuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */; };
 		3A16D41E28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */; };
-		3AD597F828CB160500284FE8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD597F728CB160500284FE8 /* .swiftlint.yml */; };
-		60DB26F228D596B7004D4ED6 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DB26F128D596B7004D4ED6 /* Sample.swift */; };
+		3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A295C8828E81A9D00243DBC /* HomeView.swift */; };
+		3A4C27BA28F162B40077194A /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27B928F162B40077194A /* QuizService.swift */; };
+		3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27BC28F189AA0077194A /* ServiceConstant.swift */; };
+		3A4C27C228F2A5C10077194A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27C128F2A5C10077194A /* ViewExtension.swift */; };
+		3A8211F628E9DF93007F2479 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8211F528E9DF93007F2479 /* ServiceModel.swift */; };
+		3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8211FD28EA9320007F2479 /* Alamofire */; };
+		3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73628F10D28003A92BC /* QuizModel.swift */; };
+		3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73828F11486003A92BC /* HTTPClient.swift */; };
+		6087BCF728E682CF0038C638 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6087BCF628E682CF0038C638 /* ResultView.swift */; };
+		60A594EB28E165F600E052F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* QuizView.swift */; };
+		60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D411CE28E3DB6A00DC2492 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +55,16 @@
 		3A16D41728CB14EA0049729B /* Level1KuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Level1KuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITests.swift; sourceTree = "<group>"; };
 		3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3AD597F728CB160500284FE8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		60DB26F128D596B7004D4ED6 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		3A295C8828E81A9D00243DBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3A4C27B928F162B40077194A /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
+		3A4C27BC28F189AA0077194A /* ServiceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
+		3A4C27C128F2A5C10077194A /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		3A8211F528E9DF93007F2479 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		3ABEF73628F10D28003A92BC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		3ABEF73828F11486003A92BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		6087BCF628E682CF0038C638 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		60A594EA28E165F600E052F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		60D411CE28E3DB6A00DC2492 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +99,6 @@
 				3A16D3FF28CB14E80049729B /* Level1Kuiz */,
 				3A16D41028CB14EA0049729B /* Level1KuizTests */,
 				3A16D41A28CB14EA0049729B /* Level1KuizUITests */,
-				3AD597F728CB160500284FE8 /* .swiftlint.yml */,
 				3A16D3FE28CB14E80049729B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,11 +116,15 @@
 		3A16D3FF28CB14E80049729B /* Level1Kuiz */ = {
 			isa = PBXGroup;
 			children = (
-				60DB26EF28D5968C004D4ED6 /* New Group */,
-				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40228CB14E80049729B /* ContentView.swift */,
+				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40428CB14EA0049729B /* Assets.xcassets */,
+				3A4C27BB28F1836A0077194A /* Constant */,
+				3A4C27C028F2A5820077194A /* Extension */,
+				60D411C928E3D94F00DC2492 /* Model */,
+				3A8211F328E9DF58007F2479 /* Network */,
 				3A16D40628CB14EA0049729B /* Preview Content */,
+				6087BCF828E682F40038C638 /* View */,
 			);
 			path = Level1Kuiz;
 			sourceTree = "<group>";
@@ -133,20 +154,81 @@
 			path = Level1KuizUITests;
 			sourceTree = "<group>";
 		};
-		60DB26EF28D5968C004D4ED6 /* New Group */ = {
+		3A295C8728E81A8F00243DBC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				60DB26F028D596AA004D4ED6 /* Seunyong */,
+				3A295C8828E81A9D00243DBC /* HomeView.swift */,
 			);
-			path = "New Group";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		60DB26F028D596AA004D4ED6 /* Seunyong */ = {
+		3A4C27B828F1615D0077194A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				60DB26F128D596B7004D4ED6 /* Sample.swift */,
+				3A4C27B928F162B40077194A /* QuizService.swift */,
 			);
-			path = Seunyong;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3A4C27BB28F1836A0077194A /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C27BC28F189AA0077194A /* ServiceConstant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		3A4C27C028F2A5820077194A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C27C128F2A5C10077194A /* ViewExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3A8211F328E9DF58007F2479 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C27B828F1615D0077194A /* Service */,
+				60D411CE28E3DB6A00DC2492 /* DataManager.swift */,
+				3ABEF73828F11486003A92BC /* HTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6087BCF528E682AC0038C638 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				6087BCF628E682CF0038C638 /* ResultView.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		6087BCF828E682F40038C638 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A295C8728E81A8F00243DBC /* Home */,
+				60A594E928E1605F00E052F2 /* Quiz */,
+				6087BCF528E682AC0038C638 /* Result */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60A594E928E1605F00E052F2 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				60A594EA28E165F600E052F2 /* QuizView.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		60D411C928E3D94F00DC2492 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3ABEF73628F10D28003A92BC /* QuizModel.swift */,
+				3A8211F528E9DF93007F2479 /* ServiceModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +248,9 @@
 			dependencies = (
 			);
 			name = Level1Kuiz;
+			packageProductDependencies = (
+				3A8211FD28EA9320007F2479 /* Alamofire */,
+			);
 			productName = Level1Kuiz;
 			productReference = 3A16D3FD28CB14E80049729B /* Level1Kuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +323,9 @@
 				Base,
 			);
 			mainGroup = 3A16D3F428CB14E80049729B;
+			packageReferences = (
+				3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 3A16D3FE28CB14E80049729B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD597F828CB160500284FE8 /* .swiftlint.yml in Resources */,
 				3A16D40828CB14EA0049729B /* Preview Assets.xcassets in Resources */,
 				3A16D40528CB14EA0049729B /* Assets.xcassets in Resources */,
 			);
@@ -279,6 +366,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3A16D42C28CB154F0049729B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -301,9 +389,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8211F628E9DF93007F2479 /* ServiceModel.swift in Sources */,
 				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
-				60DB26F228D596B7004D4ED6 /* Sample.swift in Sources */,
+				3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */,
+				60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */,
+				3A4C27BA28F162B40077194A /* QuizService.swift in Sources */,
+				3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */,
+				3A4C27C228F2A5C10077194A /* ViewExtension.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
+				3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */,
+				60A594EB28E165F600E052F2 /* QuizView.swift in Sources */,
+				6087BCF728E682CF0038C638 /* ResultView.swift in Sources */,
+				3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Level1Kuiz/Preview Content\"";
+				DEVELOPMENT_TEAM = MV89SHQKF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -490,6 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Level1Kuiz/Preview Content\"";
+				DEVELOPMENT_TEAM = MV89SHQKF4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -622,6 +721,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A8211FD28EA9320007F2479 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A16D3F528CB14E80049729B /* Project object */;
 }
