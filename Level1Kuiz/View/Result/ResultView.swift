@@ -2,75 +2,58 @@
 //  ResultView.swift
 //  Level1Kuiz
 //
-//  Created by 황석현 on 2022/09/25.
+//  Created by 황석현 on 2022/10/21.
 //
 
 import SwiftUI
 
 struct ResultView: View {
 
-    @State var name: String = ""
-    var score: Int = 0
-    var Correct: String = "0"
-
     @Binding var isNavigationLinkActive: Bool
+    @State var userName: String = ""
 
     var body: some View {
         VStack {
+            Text("퀴즈가 끝났어요!")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .padding()
 
-            HStack(spacing: 10) {
-                Image(systemName: "star.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-
-                Text("Kuiz가 끝났습니다!")
-                    .font(.largeTitle)
-
-                Image(systemName: "star.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
-
-            Spacer()
-                .frame(height: 30)
-
-            // 틀린 문제에 대한 정답 가져오기
-            Text("정답은 \(Correct)")
-                .font(.headline)
-            Spacer()
-                .frame(height: 10)
-
-            // 정답풀이(필요하다면)
-//            Text("정답풀이")
-//                .font(.subheadline)
-//            Spacer()
-//                .frame(height: 50)
-//
-            // 점수 출력, 저장하기
-            Text("점수는 \(score)입니다. 저장하시겠습니까?")
+            Text("점수는 0")
                 .font(.title2)
-            Spacer()
-                .frame(height: 10)
+                .fontWeight(.heavy)
+                .padding()
 
-            // 기록 저장
-            TextField("이름을 입력하세요!", text: $name)
-                .frame(width: 100, height: 10, alignment: .center)
-            Spacer()
-                .frame(height: 30)
-
-            HStack {
-                Button("다시하기") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-            }
-                Button("홈으로") {
-                    isNavigationLinkActive = false
+            HStack(alignment: .center, spacing: 10) {
+                TextField("저장하시겠습니까?", text: $userName)
+                    .frame(width: 150, height: 30, alignment: .center)
+                Button {
+                } label: {
+                    Text("저장하기")
+                        .font(.system(size: 17))
                 }
+            }.padding()
+
+            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive), isActive: $isNavigationLinkActive) {
+                Button {
+                    isNavigationLinkActive = false
+                } label: {
+                    Text("홈으로 가기")
+                        .font(.system(size: 20))
+                        .fontWeight(.black)
+                        .frame(width: 160, height: 60)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(80)
+                }
+
             }
+
         }
     }
 }
 
-struct Result_Previews: PreviewProvider {
+struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView(isNavigationLinkActive: .constant(true))
     }
