@@ -25,7 +25,7 @@ struct ResultView: View {
                 .fontWeight(.heavy)
                 .padding()
 
-                // 유저ID 저장하기 개발 중
+                //  유저ID 저장하기 개발 중
 //                Button {
 //                    saveUserID = ""
 //                } label: {
