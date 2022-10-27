@@ -10,7 +10,8 @@ import SwiftUI
 struct ResultView: View {
 
     @Binding var isNavigationLinkActive: Bool
-    @State var userName: String = ""
+    @State var saveUserID: String = ""
+    @State var scoreBoard: [String] = [""]
 
     var body: some View {
         VStack {
@@ -24,17 +25,19 @@ struct ResultView: View {
                 .fontWeight(.heavy)
                 .padding()
 
-            HStack(alignment: .center, spacing: 10) {
-                TextField("저장하시겠습니까?", text: $userName)
-                    .frame(width: 150, height: 30, alignment: .center)
-                Button {
-                } label: {
-                    Text("저장하기")
-                        .font(.system(size: 17))
-                }
-            }.padding()
+                // 유저ID 저장하기 개발 중
+//                Button {
+//                    saveUserID = ""
+//                } label: {
+//                    HStack(alignment: .center, spacing: 10) {
+//                        TextField("저장하시겠습니까?", text: $saveUserID)
+//                            .frame(width: 150, height: 30, alignment: .center)
+//                    Text("저장하기")
+//                        .font(.system(size: 17))
+//                }
+//            }.padding()
 
-            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive), isActive: $isNavigationLinkActive) {
+            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
                 Button {
                     isNavigationLinkActive = false
                 } label: {
@@ -47,9 +50,12 @@ struct ResultView: View {
                         .cornerRadius(80)
                 }
 
-            }
-
-        }
+            }.navigationBarBackButtonHidden(true)
+            Text(saveUserID)
+        }.frame(width: 380, height: 400)
+            .background(Color.yellow)
+            .cornerRadius(80)
+            .padding()
     }
 }
 
