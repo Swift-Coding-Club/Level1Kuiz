@@ -10,6 +10,9 @@ import SwiftUI
 struct ResultView: View {
 
     @Binding var isNavigationLinkActive: Bool
+    @State var userName: String = ""
+    var correctCount: Int
+
     @State var saveUserID: String = ""
     @State var userName: Array = [""]
     @State var userScore: Array = []
@@ -22,7 +25,7 @@ struct ResultView: View {
                 .fontWeight(.heavy)
                 .padding()
 
-            Text("점수는 0")
+            Text("점수는 \(correctCount)")
                 .font(.title2)
                 .fontWeight(.heavy)
                 .padding()
@@ -80,6 +83,6 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(isNavigationLinkActive: .constant(true))
+        ResultView(isNavigationLinkActive: .constant(true), correctCount: 0)
     }
 }

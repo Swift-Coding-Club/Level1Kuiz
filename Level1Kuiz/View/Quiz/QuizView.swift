@@ -19,13 +19,18 @@ struct QuizView: View {
     @State var isQuizEnded: Bool = false
 
     @Binding var isNavigationLinkActive: Bool
+    @State var isShowingResultView = false
 
     var body: some View {
 
         GeometryReader { geometry in
             ZStack {
+                NavigationLink(destination: ResultView(isNavigationLinkActive: $isNavigationLinkActive, correctCount: currentCount), isActive: $isShowingResultView) {}
+                    .hidden()
+
                 Color.yellow
                     .edgesIgnoringSafeArea(.all)
+
                 VStack {
                     Spacer()
                         .frame(height: geometry.size.height * 0.05)
@@ -40,75 +45,58 @@ struct QuizView: View {
                             .edgesIgnoringSafeArea(.bottom)
                         VStack(alignment: .center, spacing: 20) {
                             if !quizzes.isEmpty {
-                                if !isQuizEnded && !didGetQuizWrong {
-                                    Text(quizzes[currentCount].answers[randomQuizIndexes[0]].text)
-                                        .frame(minWidth: geometry.size.width * 0.7)
-                                        .font(Font.title3.bold())
-                                        .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-                                        .background(.white)
-                                        .cornerRadius(40, antialiased: true)
-                                        .shadow(radius: 1)
-                                        .onTapGesture {
-                                            if quizzes[currentCount].answers[randomQuizIndexes[0]].isCorrect {
-                                                currentCount += 1
-                                            } else {
-                                                // 문제 틀리면 결과 화면으로..
-                                                didGetQuizWrong = true
-                                            }
-                                            if currentCount == quizzes.count {
-                                                isQuizEnded = true
-                                            }
-                                            randomQuizIndexes.shuffle()
-                                        }
-                                    Text(quizzes[currentCount].answers[randomQuizIndexes[1]].text)
-                                        .frame(minWidth: geometry.size.width * 0.7)
-                                        .font(Font.title3.bold())
-                                        .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
-                                        .background(.white)
-                                        .cornerRadius(40, antialiased: true)
-                                        .shadow(radius: 1)
-                                        .onTapGesture {
-                                            if quizzes[currentCount].answers[randomQuizIndexes[1]].isCorrect {
-                                                currentCount += 1
-                                            } else {
-                                                // 문제 틀리면 결과 화면으로..
-                                                didGetQuizWrong = true
-                                            }
-                                            if currentCount == quizzes.count {
-                                                isQuizEnded = true
-                                            }
-                                            randomQuizIndexes.shuffle()
-                                        }
-                                } else if !isQuizEnded && didGetQuizWrong {
-                                    VStack(spacing: 50) {
-                                        Text("앗! 문제를 틀렸습니다.")
-                                            .font(Font.title.bold())
-                                        NavigationLink(destination: ResultView(isNavigationLinkActive: $isNavigationLinkActive)) {
-                                            Text("결과 보기")
-                                                .font(.system(size: 20))
-                                                .fontWeight(.black)
-                                                .frame(width: 160, height: 60)
-                                                .foregroundColor(Color.white)
-                                                .background(Color.black)
-                                                .cornerRadius(80)
 
+                                Text(quizzes[currentCount].answers[randomQuizIndexes[0]].text)
+                                    .frame(minWidth: geometry.size.width * 0.7)
+                                    .font(Font.title2.bold())
+                                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+                                    .background(.white)
+                                    .cornerRadius(40, antialiased: true)
+                                    .shadow(radius: 1)
+                                    .onTapGesture {
+                                        if quizzes[currentCount].answers[randomQuizIndexes[0]].isCorrect {
+                                            currentCount += 1
+                                        } else {
+                                            // 문제 틀리면 결과 화면으로..
+                                            didGetQuizWrong = true
+                                            if !isQuizEnded && didGetQuizWrong {
+                                                isShowingResultView = true
+                                            }
+                                            if isQuizEnded && !didGetQuizWrong {
+                                                isShowingResultView = true
+                                            }
                                         }
-                                    }
-                                } else if isQuizEnded && !didGetQuizWrong {
-                                    VStack(spacing: 50) {
-                                        Text("모든 문제가 끝났습니다!")
-                                            .font(Font.title.bold())
-                                        NavigationLink(destination: ResultView(isNavigationLinkActive: $isNavigationLinkActive)) {
-                                            Text("결과 보기")
-                                                .font(.system(size: 20))
-                                                .fontWeight(.black)
-                                                .frame(width: 160, height: 60)
-                                                .foregroundColor(Color.white)
-                                                .background(Color.black)
-                                                .cornerRadius(80)
+                                        if currentCount == quizzes.count {
+                                            isQuizEnded = true
                                         }
+                                        randomQuizIndexes.shuffle()
                                     }
-                                }
+                                Text(quizzes[currentCount].answers[randomQuizIndexes[1]].text)
+                                    .frame(minWidth: geometry.size.width * 0.7)
+                                    .font(Font.title2.bold())
+                                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+                                    .background(.white)
+                                    .cornerRadius(40, antialiased: true)
+                                    .shadow(radius: 1)
+                                    .onTapGesture {
+                                        if quizzes[currentCount].answers[randomQuizIndexes[1]].isCorrect {
+                                            currentCount += 1
+                                        } else {
+                                            // 문제 틀리면 결과 화면으로..
+                                            didGetQuizWrong = true
+                                            if !isQuizEnded && didGetQuizWrong {
+                                                isShowingResultView = true
+                                            }
+                                            if isQuizEnded && !didGetQuizWrong {
+                                                isShowingResultView = true
+                                            }
+                                        }
+                                        if currentCount == quizzes.count {
+                                            isQuizEnded = true
+                                        }
+                                        randomQuizIndexes.shuffle()
+                                    }
+
                             } else {
                                 ProgressView()
                                     .progressViewStyle(CircularProgressViewStyle(tint: .black))
