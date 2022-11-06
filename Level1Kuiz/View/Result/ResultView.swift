@@ -13,6 +13,11 @@ struct ResultView: View {
     @State var userName: String = ""
     var correctCount: Int
 
+    @State var saveUserID: String = ""
+    @State var userName: Array = [""]
+    @State var userScore: Array = []
+    @State var toggle: Bool = true
+
     var body: some View {
         VStack {
             Text("퀴즈가 끝났어요!")
@@ -25,15 +30,25 @@ struct ResultView: View {
                 .fontWeight(.heavy)
                 .padding()
 
+            //  유저ID 저장하기 개발 중
             HStack(alignment: .center, spacing: 10) {
-                TextField("저장하시겠습니까?", text: $userName)
-                    .frame(width: 150, height: 30, alignment: .center)
+                TextField("저장할까요?", text: $saveUserID)
+                    .frame(width: 120, height: 40, alignment: .center)
+                    .font(.system(size: 22))
+                    .autocorrectionDisabled(true)
                 Button {
+                    // 유저이름 저장
+                    userName.append(saveUserID)
+                    // 유저의 점수 저장
+//                  userScore.append(currentCount)
+
                 } label: {
-                    Text("저장하기")
-                        .font(.system(size: 17))
+                    Text("저장하기!")
+                        .font(.system(size: 20))
+                        .bold()
                 }
-            }.padding()
+            }
+            .padding()
 
             NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
                 Button {
@@ -47,10 +62,22 @@ struct ResultView: View {
                         .background(Color.black)
                         .cornerRadius(80)
                 }
+                NavigationLink(destination: ScoreView()) {
+                    Text("기록 보기")
+                        .font(.system(size: 20))
+                        .fontWeight(.black)
+                        .frame(width: 160, height: 60)
+                        .foregroundColor(Color.white)
+                        .background(Color.black)
+                        .cornerRadius(80)
+                    }
 
-            }
+            }.navigationBarBackButtonHidden(true)
 
-        }
+        }.frame(width: 380, height: 400)
+            .background(Color.yellow)
+            .cornerRadius(80)
+            .padding()
     }
 }
 

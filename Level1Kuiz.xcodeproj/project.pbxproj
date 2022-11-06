@@ -22,6 +22,7 @@
 		3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A8211FD28EA9320007F2479 /* Alamofire */; };
 		3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73628F10D28003A92BC /* QuizModel.swift */; };
 		3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73828F11486003A92BC /* HTTPClient.swift */; };
+		590B93D8290BF00400364B96 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B93D7290BF00400364B96 /* ScoreView.swift */; };
 		59DA838A2902625E00C79526 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA83892902625E00C79526 /* ResultView.swift */; };
 		60A594EB28E165F600E052F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* QuizView.swift */; };
 		60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D411CE28E3DB6A00DC2492 /* DataManager.swift */; };
@@ -62,6 +63,7 @@
 		3A8211F528E9DF93007F2479 /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		3ABEF73628F10D28003A92BC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		3ABEF73828F11486003A92BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		590B93D7290BF00400364B96 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		59DA83892902625E00C79526 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		60A594EA28E165F600E052F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		60D411CE28E3DB6A00DC2492 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				59DA83892902625E00C79526 /* ResultView.swift */,
+				590B93D7290BF00400364B96 /* ScoreView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 				3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */,
 				60A594EB28E165F600E052F2 /* QuizView.swift in Sources */,
+				590B93D8290BF00400364B96 /* ScoreView.swift in Sources */,
 				3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
