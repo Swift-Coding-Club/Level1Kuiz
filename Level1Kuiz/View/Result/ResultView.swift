@@ -40,6 +40,21 @@ struct ResultView: View {
                         if getRankByScore(with: score) == Rank.expert {
                             Text("이렇게 높은 점수가 나오다니 당신의 직업이 궁금하군요! 우리말 겨루기에 도전해 보는 건 어떠세요?")
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                            NavigationLink(destination: HomeView()) {
+                                Button {
+                                    isNavigationLinkActive = false
+                                } label: {
+                                    Text("홈")
+                                        .font(.system(size: 20))
+                                        .fontWeight(.black)
+                                        .frame(width: 160)
+                                        .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.black)
+                                        .cornerRadius(80)
+                                }
+                            }
+                            .navigationBarBackButtonHidden(true)
                         } else {
                             Text("더 높은 등급에 도전해 보세요!")
                             NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
@@ -59,13 +74,12 @@ struct ResultView: View {
                         }
                     }
                 }
-                .padding(EdgeInsets(top: 100, leading: 40, bottom: 80, trailing: 40))
+                .padding(EdgeInsets(top: 60, leading: 40, bottom: 60, trailing: 40))
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .background(Color.yellow)
                 .cornerRadius(60, corners: [.topLeft, .topRight])
             }
             .edgesIgnoringSafeArea(.all)
-            .frame(height: 240, alignment: .bottom)
         }
         .onChange(of: isNavigationLinkActive, perform: { isActive in
             if isActive {
