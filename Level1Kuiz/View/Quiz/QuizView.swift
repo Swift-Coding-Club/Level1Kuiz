@@ -25,7 +25,7 @@ struct QuizView: View {
 
         GeometryReader { geometry in
             ZStack {
-                NavigationLink(destination: ResultView(isNavigationLinkActive: $isNavigationLinkActive, correctCount: currentCount), isActive: $isShowingResultView) {}
+                NavigationLink(destination: ResultView(isNavigationLinkActive: $isNavigationLinkActive, score: currentCount), isActive: $isShowingResultView) {}
                     .hidden()
 
                 Color.yellow
