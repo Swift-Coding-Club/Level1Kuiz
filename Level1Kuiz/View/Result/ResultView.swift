@@ -10,79 +10,97 @@ import SwiftUI
 struct ResultView: View {
 
     @Binding var isNavigationLinkActive: Bool
-    @State var userName: String = ""
-    var correctCount: Int
+    var score: Int
 
-    @State var saveUserID: String = ""
-    @State var userName: Array = [""]
-    @State var userScore: Array = []
-    @State var toggle: Bool = true
+    static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
+
+    @State private var timer = Timer.publish(every: TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
+    @State var dynamicScore: Int = 0
 
     var body: some View {
         VStack {
-            Text("퀴즈가 끝났어요!")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .padding()
-
-            Text("점수는 \(correctCount)")
-                .font(.title2)
-                .fontWeight(.heavy)
-                .padding()
-
-            //  유저ID 저장하기 개발 중
-            HStack(alignment: .center, spacing: 10) {
-                TextField("저장할까요?", text: $saveUserID)
-                    .frame(width: 120, height: 40, alignment: .center)
-                    .font(.system(size: 22))
-                    .autocorrectionDisabled(true)
-                Button {
-                    // 유저이름 저장
-                    userName.append(saveUserID)
-                    // 유저의 점수 저장
-//                  userScore.append(currentCount)
-
-                } label: {
-                    Text("저장하기!")
-                        .font(.system(size: 20))
-                        .bold()
+            GeometryReader { geometry in
+                VStack(alignment: .center, spacing: 8) {
+                    Text(dynamicScore.description)
+                        .font(.system(size: 80))
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                    Text(getRankByScore(with: score).rawValue)
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                 }
+                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                .frame(width: geometry.size.width, height: geometry.size.height)
             }
-            .padding()
 
-            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
-                Button {
-                    isNavigationLinkActive = false
-                } label: {
-                    Text("홈으로 가기")
-                        .font(.system(size: 20))
-                        .fontWeight(.black)
-                        .frame(width: 160, height: 60)
-                        .foregroundColor(Color.white)
-                        .background(Color.black)
-                        .cornerRadius(80)
-                }
-                NavigationLink(destination: ScoreView()) {
-                    Text("기록 보기")
-                        .font(.system(size: 20))
-                        .fontWeight(.black)
-                        .frame(width: 160, height: 60)
-                        .foregroundColor(Color.white)
-                        .background(Color.black)
-                        .cornerRadius(80)
+            GeometryReader { geometry in
+                VStack {
+                    VStack(spacing: 24) {
+                        if getRankByScore(with: score) == Rank.expert {
+                            Text("이렇게 높은 점수가 나오다니 당신의 직업이 궁금하군요! 우리말 겨루기에 도전해 보는 건 어떠세요?")
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        } else {
+                            Text("더 높은 등급에 도전해 보세요!")
+                            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
+                                Button {
+                                    isNavigationLinkActive = false
+                                } label: {
+                                    Text("\(getRankByScore(with: score + 10).rawValue) 도전")
+                                        .font(.system(size: 20))
+                                        .fontWeight(.black)
+                                        .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
+                                        .foregroundColor(Color.white)
+                                        .background(Color.black)
+                                        .cornerRadius(80)
+                                }
+                            }
+                            .navigationBarBackButtonHidden(true)
+                        }
                     }
+                }
+                .padding(EdgeInsets(top: 100, leading: 40, bottom: 80, trailing: 40))
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                .background(Color.yellow)
+                .cornerRadius(60, corners: [.topLeft, .topRight])
+            }
+            .edgesIgnoringSafeArea(.all)
+            .frame(height: 240, alignment: .bottom)
+        }
+        .onChange(of: isNavigationLinkActive, perform: { isActive in
+            if isActive {
+                timer.upstream.connect().cancel()
+            } else {
+                timer = Timer.publish(every: ResultView.TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
+            }
+        })
+        .onReceive(timer) { _ in
+            if dynamicScore == score {
+                timer.upstream.connect().cancel()
+                return
+            }
 
-            }.navigationBarBackButtonHidden(true)
+            dynamicScore += 1
+        }
+    }
 
-        }.frame(width: 380, height: 400)
-            .background(Color.yellow)
-            .cornerRadius(80)
-            .padding()
+    private func getRankByScore(with score: Int) -> Rank {
+        if score >= 40 {
+            return Rank.expert
+        } else if score >= 30 {
+            return Rank.master
+        } else if score >= 20 {
+            return Rank.pro
+        } else if score >= 10 {
+            return Rank.normal
+        } else {
+            return Rank.newbie
+        }
     }
 }
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(isNavigationLinkActive: .constant(true), correctCount: 0)
+        ResultView(isNavigationLinkActive: .constant(true), score: 10)
     }
 }

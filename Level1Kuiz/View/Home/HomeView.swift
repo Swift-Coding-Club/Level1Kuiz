@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 5
 
     @StateObject private var quizExamplesModel = QuizExamplesModel()
@@ -93,6 +94,7 @@ struct HomeView: View {
         }
         .preferredColorScheme(.light)
     }
+
 }
 
 struct HomeView_Previews: PreviewProvider {
