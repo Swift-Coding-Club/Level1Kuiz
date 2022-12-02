@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import SwiftUIMargin
 
 struct ResultView: View {
 
-    @Binding var isNavigationLinkActive: Bool
     var score: Int
+    var answer: String
+    var description: String
 
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
 
+    @State private var isNavigationLinkActive = false
     @State private var timer = Timer.publish(every: TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
     @State var dynamicScore: Int = 0
 
@@ -29,6 +32,15 @@ struct ResultView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("\(answer)")
+                            .font(.title3)
+                            .fontWeight(.heavy)
+                        Text("\(description)")
+                            .foregroundColor(Color.gray)
+                    }
+                    .margin(top: 40)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 }
                 .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                 .frame(width: geometry.size.width, height: geometry.size.height)
@@ -40,9 +52,9 @@ struct ResultView: View {
                         if getRankByScore(with: score) == Rank.expert {
                             Text("이렇게 높은 점수가 나오다니 당신의 직업이 궁금하군요! 우리말 겨루기에 도전해 보는 건 어떠세요?")
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                            NavigationLink(destination: HomeView()) {
+                            NavigationLink(destination: HomeView(), isActive: $isNavigationLinkActive) {
                                 Button {
-                                    isNavigationLinkActive = false
+                                    isNavigationLinkActive = true
                                 } label: {
                                     Text("홈")
                                         .font(.system(size: 20))
@@ -57,9 +69,9 @@ struct ResultView: View {
                             .navigationBarBackButtonHidden(true)
                         } else {
                             Text("더 높은 등급에 도전해 보세요!")
-                            NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive)) {
+                            NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
                                 Button {
-                                    isNavigationLinkActive = false
+                                    isNavigationLinkActive = true
                                 } label: {
                                     Text("\(getRankByScore(with: score + 10).rawValue) 도전")
                                         .font(.system(size: 20))
@@ -115,6 +127,10 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(isNavigationLinkActive: .constant(true), score: 10)
+        ResultView(
+            score: 10,
+            answer: "",
+            description: ""
+        )
     }
 }

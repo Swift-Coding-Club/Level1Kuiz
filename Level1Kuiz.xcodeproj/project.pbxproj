@@ -15,6 +15,8 @@
 		3A16D41C28CB14EA0049729B /* Level1KuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */; };
 		3A16D41E28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */; };
 		3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A295C8828E81A9D00243DBC /* HomeView.swift */; };
+		3A337A59293A586A00BD7AE1 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A337A58293A586A00BD7AE1 /* IntExtension.swift */; };
+		3A337A5C293A6C4D00BD7AE1 /* SwiftUIMargin in Frameworks */ = {isa = PBXBuildFile; productRef = 3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */; };
 		3A4C27BA28F162B40077194A /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27B928F162B40077194A /* QuizService.swift */; };
 		3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27BC28F189AA0077194A /* ServiceConstant.swift */; };
 		3A4C27C228F2A5C10077194A /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C27C128F2A5C10077194A /* ViewExtension.swift */; };
@@ -23,7 +25,6 @@
 		3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB52A03291F2626004E4441 /* ResultModel.swift */; };
 		3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73628F10D28003A92BC /* QuizModel.swift */; };
 		3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73828F11486003A92BC /* HTTPClient.swift */; };
-		590B93D8290BF00400364B96 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B93D7290BF00400364B96 /* ScoreView.swift */; };
 		59DA838A2902625E00C79526 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA83892902625E00C79526 /* ResultView.swift */; };
 		60A594EB28E165F600E052F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* QuizView.swift */; };
 		60D411CF28E3DB6A00DC2492 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D411CE28E3DB6A00DC2492 /* DataManager.swift */; };
@@ -58,6 +59,7 @@
 		3A16D41B28CB14EA0049729B /* Level1KuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITests.swift; sourceTree = "<group>"; };
 		3A16D41D28CB14EA0049729B /* Level1KuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3A295C8828E81A9D00243DBC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3A337A58293A586A00BD7AE1 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		3A4C27B928F162B40077194A /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		3A4C27BC28F189AA0077194A /* ServiceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConstant.swift; sourceTree = "<group>"; };
 		3A4C27C128F2A5C10077194A /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		3AB52A03291F2626004E4441 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		3ABEF73628F10D28003A92BC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		3ABEF73828F11486003A92BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		590B93D7290BF00400364B96 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		59DA83892902625E00C79526 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		60A594EA28E165F600E052F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		60D411CE28E3DB6A00DC2492 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A337A5C293A6C4D00BD7AE1 /* SwiftUIMargin in Frameworks */,
 				3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4C27C128F2A5C10077194A /* ViewExtension.swift */,
+				3A337A58293A586A00BD7AE1 /* IntExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -204,7 +207,6 @@
 			isa = PBXGroup;
 			children = (
 				59DA83892902625E00C79526 /* ResultView.swift */,
-				590B93D7290BF00400364B96 /* ScoreView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -256,6 +258,7 @@
 			name = Level1Kuiz;
 			packageProductDependencies = (
 				3A8211FD28EA9320007F2479 /* Alamofire */,
+				3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */,
 			);
 			productName = Level1Kuiz;
 			productReference = 3A16D3FD28CB14E80049729B /* Level1Kuiz.app */;
@@ -331,6 +334,7 @@
 			mainGroup = 3A16D3F428CB14E80049729B;
 			packageReferences = (
 				3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */,
 			);
 			productRefGroup = 3A16D3FE28CB14E80049729B /* Products */;
 			projectDirPath = "";
@@ -403,10 +407,10 @@
 				59DA838A2902625E00C79526 /* ResultView.swift in Sources */,
 				3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */,
 				3A4C27C228F2A5C10077194A /* ViewExtension.swift in Sources */,
+				3A337A59293A586A00BD7AE1 /* IntExtension.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 				3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */,
 				60A594EB28E165F600E052F2 /* QuizView.swift in Sources */,
-				590B93D8290BF00400364B96 /* ScoreView.swift in Sources */,
 				3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */,
 				3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */,
 			);
@@ -495,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -549,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -575,6 +579,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,6 +609,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -731,6 +737,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/karamage/SwiftUIMargin.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -742,6 +756,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */;
+			productName = SwiftUIMargin;
+		};
 		3A8211FD28EA9320007F2479 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */;

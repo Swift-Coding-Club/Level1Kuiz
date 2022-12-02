@@ -12,12 +12,12 @@ struct HomeView: View {
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 5
 
     @StateObject private var quizExamplesModel = QuizExamplesModel()
+    @State private var isNavigationLinkActive = false
     @State private var timer = Timer.publish(every: TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
     @State private var answers: [Quiz.Answer] = [
         Quiz.Answer(text: "한글 날", isCorrect: false),
         Quiz.Answer(text: "한글날", isCorrect: true)
     ]
-    @State private var isNavigationLinkActive = false
 
     var body: some View {
         NavigationView {
@@ -51,7 +51,7 @@ struct HomeView: View {
 
                         Spacer()
 
-                        NavigationLink(destination: QuizView(isNavigationLinkActive: $isNavigationLinkActive), isActive: $isNavigationLinkActive) {
+                        NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
                             Button {
                                 isNavigationLinkActive = true
                             } label: {
