@@ -2,7 +2,7 @@
 
 결과 등급이 높은 순서대로 5분에게 소소한 선물을 드려요! 🎁
 
-* MOFT 아이패드 거치대 ([링크](https://www.moft.us/products/snap-ipad-case-stand-new?variant=39697408131159))
+* ~~MOFT 아이패드 거치대 ([링크](https://www.moft.us/products/snap-ipad-case-stand-new?variant=39697408131159))~~
 * 스타벅스 기프티콘
 
 ![스위프트 코딩 클럽](https://user-images.githubusercontent.com/16731356/205471879-92636e25-7e68-463f-9835-8fd8b15c0f18.png)
@@ -13,8 +13,8 @@
 
 ## 참여 방법
 
-1. 이 저장소를 클론해 주세요.
-2. 프로젝트를 Xcode로 열어 주세요.
+1. https://testflight.apple.com/join/lOo4dZP7 주소로 접속해 주세요.
+2. Kuiz 앱을 실행해 주세요.
 3. 게임을 진행해 주세요.
 4. 결과 화면을 캡처해 주세요.
 5. 디스코드 💬 **얘기해요** 채널에 올려 주세요.
