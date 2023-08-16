@@ -13,6 +13,14 @@ class QuizService {
             completeHandler(result)
         }
     }
+    
+    func fetchQuizzes() async throws -> [Quiz] {
+        try await HTTPClient().request(
+            type: [Quiz].self,
+            path: "/quizzes",
+            method: .get
+        )
+    }
 
     func getQuizExamples(completeHandler: @escaping (Result<[[Quiz.Answer]], Error>) -> Void) {
         HTTPClient().request(path: "/examples", method: .get) { (result: Result<[[Quiz.Answer]], Error>) in

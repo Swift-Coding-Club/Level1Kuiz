@@ -52,13 +52,9 @@ struct QuizView: View {
                         }
                     }
                     .onAppear {
-                        QuizService().getQuizzes { result in
-                            switch result {
-                            case .success(let data):
-                                quizzes = data.shuffled()
-                            case .failure(let error):
-                                print(error)
-                            }
+                        Task {
+                            let quizzes = try await QuizService().fetchQuizzes()
+                            self.quizzes = quizzes.shuffled()
                         }
                     }
                     .margin(top: 40)
