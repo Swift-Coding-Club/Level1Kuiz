@@ -13,7 +13,9 @@ struct ResultView: View {
     var score: Int
     var answer: String
     var description: String
-
+    
+    var maxScore: Int = 40
+    
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
 
     @State private var isNavigationLinkActive = false
@@ -68,7 +70,13 @@ struct ResultView: View {
                             }
                             .navigationBarBackButtonHidden(true)
                         } else {
-                            Text("더 높은 등급에 도전해 보세요!")
+                            if score == maxScore {
+                                Text("당신은 \(getRankByScore(with: score).rawValue)!!")
+                            } else {
+                                Text("\(getRankByScore(with: score + 10).rawValue) 등급까지 \(getRemainScore(rank: getRankByScore(with: score), score: score))문제 남았어요.")
+                                    .font(.system(size: 18, weight: .semibold))
+                                Text("더 높은 등급에 도전해 보세요!")
+                            }
                             NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
                                 Button {
                                     isNavigationLinkActive = true
@@ -122,6 +130,22 @@ struct ResultView: View {
         } else {
             return Rank.newbie
         }
+    }
+    
+    private func getRemainScore(rank: Rank, score: Int) -> Int {
+        switch rank {
+        case .newbie:
+            return 10 - score
+        case .normal:
+            return 20 - score
+        case .pro:
+            return 30 - score
+        case .master:
+            return 40 - score
+        case .expert:
+            return 40
+        }
+
     }
 }
 
