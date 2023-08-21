@@ -10,12 +10,12 @@ import Foundation
 
 class HTTPClient: ObservableObject {
     private let baseURL = "https://634a6d5f5df952851411457d.mockapi.io/kuiz"
-    
+
     func request<R: Decodable>(path: String, method: HTTPMethod, completeHandler: @escaping (Result<R, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)\(path)") else {
             fatalError(ServiceConstant.NOT_FOUND_URL)
         }
-        
+
         AF.request(try! URLRequest(url: url, method: method))
             .validate(statusCode: 200..<300)
             .responseDecodable(of: Response<R>.self) { response in
@@ -27,7 +27,7 @@ class HTTPClient: ObservableObject {
                 }
             }
     }
-    
+
     func request<R: Decodable>(
         type: R.Type,
         path: URLConvertible,
@@ -36,9 +36,9 @@ class HTTPClient: ObservableObject {
         guard let url = URL(string: "\(baseURL)\(path)") else {
             fatalError(ServiceConstant.NOT_FOUND_URL)
         }
-        
+
         let request = try URLRequest(url: url, method: method)
-        
+
         return try await AF.request(request)
             .validate(statusCode: 200..<300)
             .serializingDecodable(Response<R>.self)
