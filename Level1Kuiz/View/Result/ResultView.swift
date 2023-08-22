@@ -13,6 +13,7 @@ struct ResultView: View {
     var score: Int
     var answer: String
     var description: String
+    var scoreColor : Color
 
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
 
@@ -88,7 +89,7 @@ struct ResultView: View {
                 }
                 .padding(EdgeInsets(top: 60, leading: 40, bottom: 60, trailing: 40))
                 .frame(width: geometry.size.width, height: geometry.size.height)
-                .background(Color.yellow)
+                .background(scoreColor)
                 .cornerRadius(60, corners: [.topLeft, .topRight])
             }
             .edgesIgnoringSafeArea(.all)
@@ -130,7 +131,8 @@ struct ResultView_Previews: PreviewProvider {
         ResultView(
             score: 10,
             answer: "",
-            description: ""
+            description: "",
+            scoreColor: Color.yellow
         )
     }
 }
