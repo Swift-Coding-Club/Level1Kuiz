@@ -37,7 +37,7 @@ struct QuizView: View {
                     .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Text("당신은 \(getRankByScore(with: score).rawValue)!")
+                    Text("당신은 \(Rank(score: score).rawValue)!")
                         .font(Font.system(size: 20, weight: .semibold))
                     Spacer()
                     VStack {

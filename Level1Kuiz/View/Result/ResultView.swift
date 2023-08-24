@@ -30,7 +30,8 @@ struct ResultView: View {
                         .font(.system(size: 80))
                         .fontWeight(.heavy)
                         .multilineTextAlignment(.center)
-                    Text(getRankByScore(with: score).rawValue)
+//                    Text(getRankByScore(with: score).rawValue)
+                    Text("\(Rank(score: score).rawValue)")
                         .font(.title)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -51,7 +52,7 @@ struct ResultView: View {
             GeometryReader { geometry in
                 VStack {
                     VStack(spacing: 24) {
-                        if getRankByScore(with: score) == Rank.expert {
+                        if Rank(score: score) == Rank.expert {
                             Text("이렇게 높은 점수가 나오다니 당신의 직업이 궁금하군요! 우리말 겨루기에 도전해 보는 건 어떠세요?")
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                             NavigationLink(destination: HomeView(), isActive: $isNavigationLinkActive) {
@@ -71,9 +72,9 @@ struct ResultView: View {
                             .navigationBarBackButtonHidden(true)
                         } else {
                             if score == maxScore {
-                                Text("당신은 \(getRankByScore(with: score).rawValue)!!")
+                                Text("당신은 \(Rank(score: score).rawValue)!!")
                             } else {
-                                Text("\(getRankByScore(with: score + 10).rawValue) 등급까지 \(getRemainScore(rank: getRankByScore(with: score), score: score))문제 남았어요.")
+                                Text("\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요.")
                                     .font(.system(size: 18, weight: .semibold))
                                 Text("더 높은 등급에 도전해 보세요!")
                             }
@@ -81,7 +82,7 @@ struct ResultView: View {
                                 Button {
                                     isNavigationLinkActive = true
                                 } label: {
-                                    Text("\(getRankByScore(with: score + 10).rawValue) 도전")
+                                    Text("\(Rank(score: score + 10).rawValue)")
                                         .font(.system(size: 20))
                                         .fontWeight(.black)
                                         .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
@@ -116,36 +117,6 @@ struct ResultView: View {
 
             dynamicScore += 1
         }
-    }
-
-    private func getRankByScore(with score: Int) -> Rank {
-        if score >= 40 {
-            return Rank.expert
-        } else if score >= 30 {
-            return Rank.master
-        } else if score >= 20 {
-            return Rank.pro
-        } else if score >= 10 {
-            return Rank.normal
-        } else {
-            return Rank.newbie
-        }
-    }
-    
-    private func getRemainScore(rank: Rank, score: Int) -> Int {
-        switch rank {
-        case .newbie:
-            return 10 - score
-        case .normal:
-            return 20 - score
-        case .pro:
-            return 30 - score
-        case .master:
-            return 40 - score
-        case .expert:
-            return 40
-        }
-
     }
 }
 
