@@ -38,18 +38,23 @@ struct QuizView: View {
                     .animation(.default, value: score)
                 
                 VStack {
-                    Text("\(score)")
-                        .font(Font.system(size: 80))
-                        .fontWeight(.bold)
-                    
-                    VStack(alignment: .center, spacing: 12) {
-                        if quizzes.isEmpty {
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                                .scaleEffect(2)
-                        } else {
-                            generateAnswerText(index: Int(randomBool), geometry: geometry)
-                            generateAnswerText(index: Int(!randomBool), geometry: geometry)
+                    Text("당신은 \(Rank(score: score).rawValue)!")
+                        .font(Font.system(size: 20, weight: .semibold))
+                    Spacer()
+                    VStack {
+                        Text("\(score)")
+                            .font(Font.system(size: 80))
+                            .fontWeight(.bold)
+                        
+                        VStack(alignment: .center, spacing: 12) {
+                            if quizzes.isEmpty {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                                    .scaleEffect(2)
+                            } else {
+                                generateAnswerText(index: Int(randomBool), geometry: geometry)
+                                generateAnswerText(index: Int(!randomBool), geometry: geometry)
+                            }
                         }
                     }
                     .onAppear {
@@ -59,6 +64,7 @@ struct QuizView: View {
                         }
                     }
                     .margin(top: 40)
+                    Spacer()
                 }
             }
         }
@@ -104,6 +110,20 @@ struct QuizView: View {
 
                 randomBool = Bool.random()
             }
+    }
+    
+    private func getRankByScore(with score: Int) -> Rank {
+        if score >= 40 {
+            return Rank.expert
+        } else if score >= 30 {
+            return Rank.master
+        } else if score >= 20 {
+            return Rank.pro
+        } else if score >= 10 {
+            return Rank.normal
+        } else {
+            return Rank.newbie
+        }
     }
 
 }
