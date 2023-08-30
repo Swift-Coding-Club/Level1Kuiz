@@ -9,17 +9,17 @@ import SwiftUI
 import SwiftUIMargin
 
 struct QuizView: View {
-
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @GestureState private var dragOffSet = CGSize.zero
-
+    
     @State var quizzes: [Quiz] = []
-    @State var score: Int = 0
+    @State var score: Int = 9
     @State var answer: String = ""
     @State var description: String = ""
     @State var randomBool: Bool = Bool.random()
     @State var isQuizEnded: Bool = false
-
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -27,20 +27,21 @@ struct QuizView: View {
                     destination: ResultView(
                         score: score,
                         answer: answer,
-                        description: description
+                        description: description,
+                        scoreColor: screenChangeScore(with: score)
                     ),
                     isActive: $isQuizEnded
                 ) {}
                     .hidden()
-
-                Color.yellow
+                screenChangeScore(with: score)
                     .edgesIgnoringSafeArea(.all)
-
+                    .animation(.default, value: score)
+                
                 VStack {
                     Text("\(score)")
                         .font(Font.system(size: 80))
                         .fontWeight(.bold)
-
+                    
                     VStack(alignment: .center, spacing: 12) {
                         if quizzes.isEmpty {
                             ProgressView()
@@ -64,6 +65,21 @@ struct QuizView: View {
         .preferredColorScheme(.light)
         .navigationBarBackButtonHidden()
     }
+    private func screenChangeScore(with score : Int)-> Color{
+        if score <= 9{
+            return Color.yellow
+        }else if score <= 19{
+            return Color.blue
+        }else if score <= 29{
+            return Color.green
+        }else if score <= 39{
+            return Color.orange
+        }else if score <= 49{
+            return Color.cyan
+        }
+            return Color.yellow
+    }
+
 
     func generateAnswerText(index: Int, geometry: GeometryProxy) -> some View {
         Text(quizzes[score].answers[index].text)
