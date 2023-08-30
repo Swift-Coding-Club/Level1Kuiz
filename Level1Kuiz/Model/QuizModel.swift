@@ -18,17 +18,13 @@ struct Quiz: Identifiable, Decodable {
     }
 }
 
+@MainActor
 class QuizExamplesModel: ObservableObject {
     @Published var data: [[Quiz.Answer]] = []
 
     init() {
-        QuizService().getQuizExamples { result in
-            switch result {
-            case .success(let data):
-                self.data = data
-            case .failure(let error):
-                print(error)
-            }
+        Task {
+            data = try await QuizService().fetchQuizExamples()
         }
     }
 }

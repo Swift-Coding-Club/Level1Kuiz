@@ -8,15 +8,19 @@
 import Foundation
 
 class QuizService {
-    func getQuizzes(completeHandler: @escaping (Result<[Quiz], Error>) -> Void) {
-        HTTPClient().request(path: "/quizzes", method: .get) { (result: Result<[Quiz], Error>) in
-            completeHandler(result)
-        }
+    func fetchQuizzes() async throws -> [Quiz] {
+        try await HTTPClient().request(
+            type: [Quiz].self,
+            path: "/quizzes",
+            method: .get
+        )
     }
 
-    func getQuizExamples(completeHandler: @escaping (Result<[[Quiz.Answer]], Error>) -> Void) {
-        HTTPClient().request(path: "/examples", method: .get) { (result: Result<[[Quiz.Answer]], Error>) in
-            completeHandler(result)
-        }
+    func fetchQuizExamples() async throws -> [[Quiz.Answer]] {
+        try await HTTPClient().request(
+            type: [[Quiz.Answer]].self,
+            path: "/examples",
+            method: .get
+        )
     }
 }

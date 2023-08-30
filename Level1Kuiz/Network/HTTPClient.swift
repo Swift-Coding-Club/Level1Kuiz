@@ -27,4 +27,22 @@ class HTTPClient: ObservableObject {
                 }
             }
     }
+
+    func request<R: Decodable>(
+        type: R.Type,
+        path: URLConvertible,
+        method: HTTPMethod
+    ) async throws -> R {
+        guard let url = URL(string: "\(baseURL)\(path)") else {
+            fatalError(ServiceConstant.NOT_FOUND_URL)
+        }
+
+        let request = try URLRequest(url: url, method: method)
+
+        return try await AF.request(request)
+            .validate(statusCode: 200..<300)
+            .serializingDecodable(Response<R>.self)
+            .value
+            .data
+    }
 }
