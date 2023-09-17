@@ -14,7 +14,7 @@ struct QuizView: View {
     @GestureState private var dragOffSet = CGSize.zero
     
     @State var quizzes: [Quiz] = []
-    @State var score: Int = 9
+    @State var score: Int = 0
     @State var answer: String = ""
     @State var description: String = ""
     @State var randomBool: Bool = Bool.random()
