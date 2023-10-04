@@ -11,7 +11,7 @@ import SwiftUI
 struct Level1KuizApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }

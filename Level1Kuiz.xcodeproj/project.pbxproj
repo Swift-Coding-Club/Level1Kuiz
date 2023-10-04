@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40028CB14E80049729B /* Level1KuizApp.swift */; };
-		3A16D40328CB14E80049729B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40228CB14E80049729B /* ContentView.swift */; };
 		3A16D40528CB14EA0049729B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16D40428CB14EA0049729B /* Assets.xcassets */; };
 		3A16D40828CB14EA0049729B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16D40728CB14EA0049729B /* Preview Assets.xcassets */; };
 		3A16D41228CB14EA0049729B /* Level1KuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41128CB14EA0049729B /* Level1KuizTests.swift */; };
@@ -49,7 +48,6 @@
 /* Begin PBXFileReference section */
 		3A16D3FD28CB14E80049729B /* Level1Kuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Level1Kuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16D40028CB14E80049729B /* Level1KuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizApp.swift; sourceTree = "<group>"; };
-		3A16D40228CB14E80049729B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A16D40428CB14EA0049729B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A16D40728CB14EA0049729B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A16D40D28CB14EA0049729B /* Level1KuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Level1KuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +118,6 @@
 		3A16D3FF28CB14E80049729B /* Level1Kuiz */ = {
 			isa = PBXGroup;
 			children = (
-				3A16D40228CB14E80049729B /* ContentView.swift */,
 				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40428CB14EA0049729B /* Assets.xcassets */,
 				3A4C27BB28F1836A0077194A /* Constant */,
@@ -397,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8211F628E9DF93007F2479 /* ServiceModel.swift in Sources */,
-				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
 				3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */,
 				3A4C27BA28F162B40077194A /* QuizService.swift in Sources */,
 				59DA838A2902625E00C79526 /* ResultView.swift in Sources */,
