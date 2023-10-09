@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftUIMargin
+import ConfettiSwiftUI
 
 struct QuizView: View {
     
@@ -19,6 +20,8 @@ struct QuizView: View {
     @State var description: String = ""
     @State var randomBool: Bool = Bool.random()
     @State var isQuizEnded: Bool = false
+    @State var scoreCounter: Int = 0
+    @State var isEvent: Bool = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -37,7 +40,7 @@ struct QuizView: View {
                     .edgesIgnoringSafeArea(.all)
                     .animation(.default, value: score)
                 
-                VStack {
+                VStack{
                     Text("당신은 \(Rank(score: score).rawValue)!")
                         .font(Font.system(size: 20, weight: .semibold))
                     Spacer()
@@ -45,7 +48,9 @@ struct QuizView: View {
                         Text("\(score)")
                             .font(Font.system(size: 80))
                             .fontWeight(.bold)
-                        
+                            .fullScreenCover(isPresented: $isEvent, content: {
+                                ReachEffectView(nowScore: $score, isEvent: $isEvent)
+                            } )
                         VStack(alignment: .center, spacing: 12) {
                             if quizzes.isEmpty {
                                 ProgressView()
@@ -98,6 +103,9 @@ struct QuizView: View {
             .onTapGesture {
                 if quizzes[score].answers[index].isCorrect {
                     score += 1
+                    if score % 10 == 0{
+                        isEvent = true
+                    }
                 } else {
                     answer = quizzes[score].answers[index == 0 ? 1 : 0].text
                     description = quizzes[score].description
