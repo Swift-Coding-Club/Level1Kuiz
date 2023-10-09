@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C87CDE32AD2AA7D00316668 /* ReachEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */; };
+		2CD8DE452ACFD005001C5EC8 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */; };
 		3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40028CB14E80049729B /* Level1KuizApp.swift */; };
 		3A16D40328CB14E80049729B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40228CB14E80049729B /* ContentView.swift */; };
 		3A16D40528CB14EA0049729B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16D40428CB14EA0049729B /* Assets.xcassets */; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachEffectView.swift; sourceTree = "<group>"; };
 		3A16D3FD28CB14E80049729B /* Level1Kuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Level1Kuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16D40028CB14E80049729B /* Level1KuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizApp.swift; sourceTree = "<group>"; };
 		3A16D40228CB14E80049729B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD8DE452ACFD005001C5EC8 /* ConfettiSwiftUI in Frameworks */,
 				3A337A5C293A6C4D00BD7AE1 /* SwiftUIMargin in Frameworks */,
 				3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */,
 			);
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				60A594EA28E165F600E052F2 /* QuizView.swift */,
+				2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			packageProductDependencies = (
 				3A8211FD28EA9320007F2479 /* Alamofire */,
 				3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */,
+				2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */,
 			);
 			productName = Level1Kuiz;
 			productReference = 3A16D3FD28CB14E80049729B /* Level1Kuiz.app */;
@@ -332,6 +338,7 @@
 			packageReferences = (
 				3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */,
+				2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 3A16D3FE28CB14E80049729B /* Products */;
 			projectDirPath = "";
@@ -397,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8211F628E9DF93007F2479 /* ServiceModel.swift in Sources */,
+				2C87CDE32AD2AA7D00316668 /* ReachEffectView.swift in Sources */,
 				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
 				3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */,
 				3A4C27BA28F162B40077194A /* QuizService.swift in Sources */,
@@ -576,7 +584,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +615,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,6 +743,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/karamage/SwiftUIMargin.git";
@@ -754,6 +770,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */;
