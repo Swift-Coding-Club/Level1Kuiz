@@ -25,6 +25,7 @@
 		3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB52A03291F2626004E4441 /* ResultModel.swift */; };
 		3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73628F10D28003A92BC /* QuizModel.swift */; };
 		3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73828F11486003A92BC /* HTTPClient.swift */; };
+		589871162AD3E0020099E5D4 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589871152AD3E0020099E5D4 /* ShareView.swift */; };
 		59DA838A2902625E00C79526 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA83892902625E00C79526 /* ResultView.swift */; };
 		60A594EB28E165F600E052F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* QuizView.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		3AB52A03291F2626004E4441 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		3ABEF73628F10D28003A92BC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		3ABEF73828F11486003A92BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		589871152AD3E0020099E5D4 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		59DA83892902625E00C79526 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		60A594EA28E165F600E052F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				59DA83892902625E00C79526 /* ResultView.swift */,
+				589871152AD3E0020099E5D4 /* ShareView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				3A337A59293A586A00BD7AE1 /* IntExtension.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 				3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */,
+				589871162AD3E0020099E5D4 /* ShareView.swift in Sources */,
 				60A594EB28E165F600E052F2 /* QuizView.swift in Sources */,
 				3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */,
 				3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */,

@@ -21,6 +21,9 @@ struct ResultView: View {
     @State private var isNavigationLinkActive = false
     @State private var timer = Timer.publish(every: TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
     @State var dynamicScore: Int = 0
+    @State private var showShareSheet = false
+    @State private var imageToShare: UIImage?
+
 
     var body: some View {
         VStack {
@@ -101,7 +104,23 @@ struct ResultView: View {
                             }
                             .navigationBarBackButtonHidden(true)
                             
+                            
+                            
                             Button {
+                                let message = "\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요."
+                                let renderer = ImageRenderer(content: ShareView(score: dynamicScore.description,
+                                                                                rank: Rank(score: score).rawValue,
+                                                                                message: message).frame(width: 400, height: 400))
+                                
+                                if let uiImage = renderer.uiImage {
+                                    imageToShare = uiImage
+                                    if let _ = imageToShare {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                            showShareSheet.toggle()
+                                        }
+                                    }
+                                }
+
                                 
                             } label: {
                                 Text("공유하기")
@@ -111,6 +130,9 @@ struct ResultView: View {
                                     .foregroundColor(Color.white)
                                     .background(Color.black)
                                     .cornerRadius(80)
+                            }
+                            .sheet(isPresented: $showShareSheet) {
+                                ShareSheet(items: [image])
                             }
                         }
                     }
@@ -137,6 +159,7 @@ struct ResultView: View {
 
             dynamicScore += 1
         }
+        
     }
 }
 
