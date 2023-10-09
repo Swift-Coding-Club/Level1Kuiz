@@ -82,7 +82,7 @@ struct ResultView: View {
                                 Button {
                                     isNavigationLinkActive = true
                                 } label: {
-                                    Text("\(Rank(score: score + 10).rawValue)")
+                                    Text("다시 도전하기")
                                         .font(.system(size: 20))
                                         .fontWeight(.black)
                                         .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))

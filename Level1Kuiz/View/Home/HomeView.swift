@@ -31,7 +31,7 @@ struct HomeView: View {
                                 .transition(.offset(x: 0, y: 300))
                         }
                     }
-                    .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                    .padding(EdgeInsets(top: 40, leading: 40, bottom: 0, trailing: 40))
                     .frame(width: geometry.size.width, height: geometry.size.height)
                 }
 
@@ -47,7 +47,7 @@ struct HomeView: View {
                                     .fontWeight(.medium)
                             }
                             Text("심심할 때 띄어쓰기 한판 어떠세요?\n풀면 풀수록 재밌는 띄어쓰기 문제!\n지금 바로 시작해 보세요 😎")
-                        }
+                        }.padding(.top, 20)
 
                         Spacer()
 
