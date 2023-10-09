@@ -13,7 +13,7 @@ struct ResultView: View {
     var score: Int
     var answer: String
     var description: String
-    var scoreColor : Color    
+    var scoreColor : Color
     var maxScore: Int = 40
   
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
@@ -21,6 +21,9 @@ struct ResultView: View {
     @State private var isNavigationLinkActive = false
     @State private var timer = Timer.publish(every: TRANSITION_TIME_INTERVAL, on: .main, in: .common).autoconnect()
     @State var dynamicScore: Int = 0
+    @State private var showShareSheet = false
+    @State private var imageToShare: UIImage?
+
 
     var body: some View {
         VStack {
@@ -30,7 +33,7 @@ struct ResultView: View {
                         .font(.system(size: 80))
                         .fontWeight(.heavy)
                         .multilineTextAlignment(.center)
-//                    Text(getRankByScore(with: score).rawValue)
+                    //                    Text(getRankByScore(with: score).rawValue)
                     Text("\(Rank(score: score).rawValue)")
                         .font(.title)
                         .fontWeight(.bold)
@@ -48,7 +51,7 @@ struct ResultView: View {
                 .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }
-
+            
             GeometryReader { geometry in
                 VStack {
                     VStack(spacing: 24) {
@@ -77,12 +80,20 @@ struct ResultView: View {
                                 Text("\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요.")
                                     .font(.system(size: 18, weight: .semibold))
                                 Text("더 높은 등급에 도전해 보세요!")
+                                Text("\(Rank(score: score + 10).rawValue)")
+                                    .font(.system(size: 20))
+                                    .fontWeight(.black)
+                                    .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.black)
+                                    .cornerRadius(80)
                             }
+                            
                             NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
                                 Button {
                                     isNavigationLinkActive = true
                                 } label: {
-                                    Text("\(Rank(score: score + 10).rawValue)")
+                                    Text("다시하기")
                                         .font(.system(size: 20))
                                         .fontWeight(.black)
                                         .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
@@ -92,6 +103,37 @@ struct ResultView: View {
                                 }
                             }
                             .navigationBarBackButtonHidden(true)
+                            
+                            
+                            
+                            Button {
+                                let message = "\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요."
+                                let renderer = ImageRenderer(content: ShareView(score: dynamicScore.description,
+                                                                                rank: Rank(score: score).rawValue,
+                                                                                message: message).frame(width: 400, height: 400))
+                                
+                                if let uiImage = renderer.uiImage {
+                                    imageToShare = uiImage
+                                    if let _ = imageToShare {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                            showShareSheet.toggle()
+                                        }
+                                    }
+                                }
+
+                                
+                            } label: {
+                                Text("공유하기")
+                                    .font(.system(size: 20))
+                                    .fontWeight(.black)
+                                    .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
+                                    .foregroundColor(Color.white)
+                                    .background(Color.black)
+                                    .cornerRadius(80)
+                            }
+                            .sheet(isPresented: $showShareSheet) {
+                                ShareSheet(items: [image])
+                            }
                         }
                     }
                 }
@@ -117,6 +159,7 @@ struct ResultView: View {
 
             dynamicScore += 1
         }
+        
     }
 }
 
