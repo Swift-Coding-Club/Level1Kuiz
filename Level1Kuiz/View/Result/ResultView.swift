@@ -115,7 +115,7 @@ struct ResultView: View {
                                 if let uiImage = renderer.uiImage {
                                     imageToShare = uiImage
                                     if let _ = imageToShare {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                                             showShareSheet.toggle()
                                         }
                                     }
@@ -132,7 +132,7 @@ struct ResultView: View {
                                     .cornerRadius(80)
                             }
                             .sheet(isPresented: $showShareSheet) {
-                                ShareSheet(items: [image])
+                                ShareSheet(items: [imageToShare])
                             }
                         }
                     }
