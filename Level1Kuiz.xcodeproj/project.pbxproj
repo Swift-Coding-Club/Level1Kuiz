@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C87CDE32AD2AA7D00316668 /* ReachEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */; };
+		2CD8DE452ACFD005001C5EC8 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */; };
 		3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40028CB14E80049729B /* Level1KuizApp.swift */; };
-		3A16D40328CB14E80049729B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D40228CB14E80049729B /* ContentView.swift */; };
 		3A16D40528CB14EA0049729B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16D40428CB14EA0049729B /* Assets.xcassets */; };
 		3A16D40828CB14EA0049729B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A16D40728CB14EA0049729B /* Preview Assets.xcassets */; };
 		3A16D41228CB14EA0049729B /* Level1KuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16D41128CB14EA0049729B /* Level1KuizTests.swift */; };
@@ -25,6 +26,7 @@
 		3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB52A03291F2626004E4441 /* ResultModel.swift */; };
 		3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73628F10D28003A92BC /* QuizModel.swift */; };
 		3ABEF73928F11486003A92BC /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABEF73828F11486003A92BC /* HTTPClient.swift */; };
+		589871162AD3E0020099E5D4 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589871152AD3E0020099E5D4 /* ShareView.swift */; };
 		59DA838A2902625E00C79526 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA83892902625E00C79526 /* ResultView.swift */; };
 		60A594EB28E165F600E052F2 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A594EA28E165F600E052F2 /* QuizView.swift */; };
 /* End PBXBuildFile section */
@@ -47,9 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachEffectView.swift; sourceTree = "<group>"; };
 		3A16D3FD28CB14E80049729B /* Level1Kuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Level1Kuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16D40028CB14E80049729B /* Level1KuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1KuizApp.swift; sourceTree = "<group>"; };
-		3A16D40228CB14E80049729B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3A16D40428CB14EA0049729B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A16D40728CB14EA0049729B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A16D40D28CB14EA0049729B /* Level1KuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Level1KuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 		3AB52A03291F2626004E4441 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		3ABEF73628F10D28003A92BC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		3ABEF73828F11486003A92BC /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		589871152AD3E0020099E5D4 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		59DA83892902625E00C79526 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		60A594EA28E165F600E052F2 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD8DE452ACFD005001C5EC8 /* ConfettiSwiftUI in Frameworks */,
 				3A337A5C293A6C4D00BD7AE1 /* SwiftUIMargin in Frameworks */,
 				3A8211FE28EA9320007F2479 /* Alamofire in Frameworks */,
 			);
@@ -120,7 +124,6 @@
 		3A16D3FF28CB14E80049729B /* Level1Kuiz */ = {
 			isa = PBXGroup;
 			children = (
-				3A16D40228CB14E80049729B /* ContentView.swift */,
 				3A16D40028CB14E80049729B /* Level1KuizApp.swift */,
 				3A16D40428CB14EA0049729B /* Assets.xcassets */,
 				3A4C27BB28F1836A0077194A /* Constant */,
@@ -204,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				59DA83892902625E00C79526 /* ResultView.swift */,
+				589871152AD3E0020099E5D4 /* ShareView.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				60A594EA28E165F600E052F2 /* QuizView.swift */,
+				2C87CDE22AD2AA7D00316668 /* ReachEffectView.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 			packageProductDependencies = (
 				3A8211FD28EA9320007F2479 /* Alamofire */,
 				3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */,
+				2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */,
 			);
 			productName = Level1Kuiz;
 			productReference = 3A16D3FD28CB14E80049729B /* Level1Kuiz.app */;
@@ -332,6 +338,7 @@
 			packageReferences = (
 				3A8211FC28EA9320007F2479 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */,
+				2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 			);
 			productRefGroup = 3A16D3FE28CB14E80049729B /* Products */;
 			projectDirPath = "";
@@ -397,7 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8211F628E9DF93007F2479 /* ServiceModel.swift in Sources */,
-				3A16D40328CB14E80049729B /* ContentView.swift in Sources */,
+				2C87CDE32AD2AA7D00316668 /* ReachEffectView.swift in Sources */,
 				3A295C8928E81A9D00243DBC /* HomeView.swift in Sources */,
 				3A4C27BA28F162B40077194A /* QuizService.swift in Sources */,
 				59DA838A2902625E00C79526 /* ResultView.swift in Sources */,
@@ -406,6 +413,7 @@
 				3A337A59293A586A00BD7AE1 /* IntExtension.swift in Sources */,
 				3A16D40128CB14E80049729B /* Level1KuizApp.swift in Sources */,
 				3ABEF73728F10D28003A92BC /* QuizModel.swift in Sources */,
+				589871162AD3E0020099E5D4 /* ShareView.swift in Sources */,
 				60A594EB28E165F600E052F2 /* QuizView.swift in Sources */,
 				3AB52A04291F2626004E4441 /* ResultModel.swift in Sources */,
 				3A4C27BD28F189AA0077194A /* ServiceConstant.swift in Sources */,
@@ -567,7 +575,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Level1Kuiz/Preview Content\"";
-				DEVELOPMENT_TEAM = MV89SHQKF4;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Kuiz;
@@ -576,17 +584,20 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1Kuiz;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Kuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -598,7 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Level1Kuiz/Preview Content\"";
-				DEVELOPMENT_TEAM = MV89SHQKF4;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Kuiz;
@@ -607,17 +618,20 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1Kuiz;
+				MARKETING_VERSION = 1.0.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Kuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -628,14 +642,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1KuizTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.KuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Level1Kuiz.app/Level1Kuiz";
 			};
 			name = Debug;
@@ -647,14 +665,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1KuizTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.KuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Level1Kuiz.app/Level1Kuiz";
 			};
 			name = Release;
@@ -665,13 +687,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1KuizUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.KuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Level1Kuiz;
 			};
 			name = Debug;
@@ -682,13 +708,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QGAQ3AY3R3;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.Level1KuizUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swiftcodingclub.KuizTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = Level1Kuiz;
 			};
 			name = Release;
@@ -735,6 +765,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 		3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/karamage/SwiftUIMargin.git";
@@ -754,6 +792,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2CD8DE442ACFD005001C5EC8 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CD8DE432ACFD005001C5EC8 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
 		3A337A5B293A6C4D00BD7AE1 /* SwiftUIMargin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3A337A5A293A6C4D00BD7AE1 /* XCRemoteSwiftPackageReference "SwiftUIMargin" */;
