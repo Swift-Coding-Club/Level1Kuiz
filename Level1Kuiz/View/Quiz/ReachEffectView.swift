@@ -11,12 +11,12 @@ import ConfettiSwiftUI
 struct ReachEffectView: View {
     @Binding var nowScore: Int
     @Binding var isEvent: Bool
-    
+
     @State var scoreCounter: Int = 10
     var body: some View {
-        ZStack{
+        ZStack {
             Color.black.ignoresSafeArea()
-            VStack(alignment: .center){
+            VStack(alignment: .center) {
                 Spacer()
                 Text("🎉축하합니다🎉")
                     .font(.system(size: 40))
@@ -31,7 +31,7 @@ struct ReachEffectView: View {
                         scoreCounter += 10
                     })
                 Spacer()
-                Button{
+                Button {
                     isEvent = false
                 }label: {
                     Text("확인")
