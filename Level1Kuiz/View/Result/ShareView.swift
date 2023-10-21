@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ShareView: View {
-    
+
     let score: String
     let rank: String
     let message: String
-    
+
     var body: some View {
         ZStack {
             Color.yellow.ignoresSafeArea()
@@ -29,7 +29,7 @@ struct ShareView: View {
                 Text("\(message)")
                     .font(.title3)
                     .fontWeight(.heavy)
-                
+
             }
             .margin(top: 40)
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
@@ -53,6 +53,6 @@ struct ShareSheet: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        
+
     }
 }

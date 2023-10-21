@@ -7,13 +7,13 @@
 
 import Foundation
 
-//enum Rank: String {
+// enum Rank: String {
 //    case newbie = "맞춤법 더듬이"
 //    case normal = "일반인"
 //    case pro = "맞춤법 변태"
 //    case master = "맞춤법 달인"
 //    case expert = "국립국어원 직원"
-//}
+// }
 
 enum Rank {
     case newbie
@@ -51,7 +51,7 @@ enum Rank {
             return "국립국어원 직원"
         }
     }
-        
+
     func getRemainScore(score: Int) -> Int {
         switch self {
         case .newbie:
@@ -66,7 +66,7 @@ enum Rank {
             return 40
         }
     }
-    
+
     func getRankByScore(with score: Int) -> Rank {
         if score >= 40 {
             return Rank.expert

@@ -13,9 +13,9 @@ struct ResultView: View {
     var score: Int
     var answer: String
     var description: String
-    var scoreColor : Color
+    var scoreColor: Color
     var maxScore: Int = 40
-  
+
     static let TRANSITION_TIME_INTERVAL: TimeInterval = 0.1
 
     @State private var isNavigationLinkActive = false
@@ -23,7 +23,6 @@ struct ResultView: View {
     @State var dynamicScore: Int = 0
     @State private var showShareSheet = false
     @State private var imageToShare: UIImage?
-
 
     var body: some View {
         VStack {
@@ -51,7 +50,7 @@ struct ResultView: View {
                 .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
                 .frame(width: geometry.size.width, height: geometry.size.height)
             }
-            
+
             GeometryReader { geometry in
                 VStack {
                     VStack(spacing: 24) {
@@ -88,7 +87,7 @@ struct ResultView: View {
                                     .background(Color.black)
                                     .cornerRadius(80)
                             }
-                            
+
                             NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
                                 Button {
                                     isNavigationLinkActive = true
@@ -103,15 +102,13 @@ struct ResultView: View {
                                 }
                             }
                             .navigationBarBackButtonHidden(true)
-                            
-                            
-                            
+
                             Button {
                                 let message = "\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요."
                                 let renderer = ImageRenderer(content: ShareView(score: dynamicScore.description,
                                                                                 rank: Rank(score: score).rawValue,
                                                                                 message: message).frame(width: 400, height: 400))
-                                
+
                                 if let uiImage = renderer.uiImage {
                                     imageToShare = uiImage
                                     if let _ = imageToShare {
@@ -121,7 +118,6 @@ struct ResultView: View {
                                     }
                                 }
 
-                                
                             } label: {
                                 Text("공유하기")
                                     .font(.system(size: 20))
@@ -159,7 +155,7 @@ struct ResultView: View {
 
             dynamicScore += 1
         }
-        
+
     }
 }
 
