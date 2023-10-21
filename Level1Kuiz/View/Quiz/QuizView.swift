@@ -46,6 +46,7 @@ struct QuizView: View {
                         .font(Font.system(size: 20, weight: .medium))
                         .progressViewStyle(LinearProgressViewStyle(tint: .white))
                         .padding(EdgeInsets(top: 50, leading: 20, bottom: 150, trailing: 20))
+
                     VStack {
                         Text("\(score)")
                             .font(Font.system(size: 80))

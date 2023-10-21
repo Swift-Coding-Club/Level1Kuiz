@@ -79,13 +79,6 @@ struct ResultView: View {
                                 Text("\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요.")
                                     .font(.system(size: 18, weight: .semibold))
                                 Text("더 높은 등급에 도전해 보세요!")
-                                Text("\(Rank(score: score + 10).rawValue)")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.black)
-                                    .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
-                                    .foregroundColor(Color.white)
-                                    .background(Color.black)
-                                    .cornerRadius(80)
                             }
 
                             NavigationLink(destination: QuizView(), isActive: $isNavigationLinkActive) {
