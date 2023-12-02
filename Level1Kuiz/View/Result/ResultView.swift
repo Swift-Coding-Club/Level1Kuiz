@@ -128,6 +128,7 @@ struct ResultView: View {
 
                 } label: {
                     Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.black)
                 }
             }
         }
