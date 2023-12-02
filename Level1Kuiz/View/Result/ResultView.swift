@@ -96,30 +96,6 @@ struct ResultView: View {
                             }
                             .navigationBarBackButtonHidden(true)
 
-                            Button {
-                                let message = "\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요."
-                                let renderer = ImageRenderer(content: ShareView(score: dynamicScore.description,
-                                                                                rank: Rank(score: score).rawValue,
-                                                                                message: message).frame(width: 400, height: 400))
-
-                                if let uiImage = renderer.uiImage {
-                                    imageToShare = uiImage
-                                    if let _ = imageToShare {
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                                            showShareSheet.toggle()
-                                        }
-                                    }
-                                }
-
-                            } label: {
-                                Text("공유하기")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.black)
-                                    .padding(EdgeInsets(top: 20, leading: 40, bottom: 20, trailing: 40))
-                                    .foregroundColor(Color.white)
-                                    .background(Color.black)
-                                    .cornerRadius(80)
-                            }
                             .sheet(isPresented: $showShareSheet) {
                                 ShareSheet(items: [imageToShare])
                             }
@@ -132,6 +108,29 @@ struct ResultView: View {
                 .cornerRadius(60, corners: [.topLeft, .topRight])
             }
             .edgesIgnoringSafeArea(.all)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    let message = "\(Rank(score: score + 10).rawValue) 등급까지 \(Rank(score: score).getRemainScore(score: score))문제 남았어요."
+                    let renderer = ImageRenderer(content: ShareView(score: dynamicScore.description,
+                                                                    rank: Rank(score: score).rawValue,
+                                                                    message: message).frame(width: 400, height: 400))
+
+                    if let uiImage = renderer.uiImage {
+                        imageToShare = uiImage
+                        if let _ = imageToShare {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                showShareSheet.toggle()
+                            }
+                        }
+                    }
+
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.black)
+                }
+            }
         }
         .onChange(of: isNavigationLinkActive, perform: { isActive in
             if isActive {
@@ -154,11 +153,13 @@ struct ResultView: View {
 
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(
-            score: 10,
-            answer: "",
-            description: "",
-            scoreColor: Color.yellow
-        )
+        NavigationStack {
+            ResultView(
+                score: 10,
+                answer: "",
+                description: "",
+                scoreColor: Color.yellow
+            )
+        }
     }
 }
