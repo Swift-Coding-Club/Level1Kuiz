@@ -22,6 +22,7 @@ struct QuizView: View {
     @State var isQuizEnded: Bool = false
     @State var scoreCounter: Int = 0
     @State var isEvent: Bool = false
+    @State var scoreBar: Double = 0.0
 
     var body: some View {
         GeometryReader { geometry in
@@ -41,9 +42,11 @@ struct QuizView: View {
                     .animation(.default, value: score)
 
                 VStack {
-                    Text("당신은 \(Rank(score: score).rawValue)!")
-                        .font(Font.system(size: 20, weight: .semibold))
-                    Spacer()
+                    ProgressView("다음 등급까지 \(10 - Int(scoreBar))문제 남았어요.", value: scoreBar, total: 10)
+                        .font(Font.system(size: 20, weight: .medium))
+                        .progressViewStyle(LinearProgressViewStyle(tint: .white))
+                        .padding(EdgeInsets(top: 50, leading: 20, bottom: 150, trailing: 20))
+
                     VStack {
                         Text("\(score)")
                             .font(Font.system(size: 80))
@@ -102,8 +105,10 @@ struct QuizView: View {
             .onTapGesture {
                 if quizzes[score].answers[index].isCorrect {
                     score += 1
+                    scoreBar += 1
                     if score % 10 == 0 {
                         isEvent = true
+                        scoreBar = 0
                     }
                 } else {
                     answer = quizzes[score].answers[index == 0 ? 1 : 0].text
