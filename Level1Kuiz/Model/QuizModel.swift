@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Quiz: Identifiable, Decodable {
+struct Quiz: Identifiable, Codable {
     var id: String
     var answers: [Answer]
     var description: String
 
-    struct Answer: Decodable {
+    struct Answer: Codable {
         var text: String
         var isCorrect: Bool
     }
